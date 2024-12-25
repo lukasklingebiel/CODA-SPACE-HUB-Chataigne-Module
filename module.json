@@ -1,10 +1,10 @@
 {
-  "name":"My custom module",
+  "name":"SPACE HUB Control",
   "type":"OSC",
-  "path":"Custom",
+  "path":"Immersive solution",
   
   "version":"1.0.0",
-  "description":"My module description",
+  "description":"CODA Audio SPACE HUB Control",
   "url":"https://github.com/tommag/Sample-Chataigne-module",
   "downloadURL":"https://github.com/tommag/Sample-Chataigne-module/archive/master.zip",
 
@@ -19,15 +19,18 @@
     "oscInput":
     {
       "localPort":9001
-    }
+    },
+    "OSC Outputs": {
+			"OSC Output": {
+				"local": true,
+				"remoteHost": "192.168.1.1",
+				"remotePort": 9301
+			}
+		}
   },
 
   "parameters":
   {
-    "Module param":
-    {
-      "type":"Integer"
-    }
   },
 
   "hideDefaultParameters": [ "autoAdd", "oscInput/localPort"],
@@ -39,28 +42,79 @@
 
   "values":
   {
-    "Module value":
-    {
-      "type":"Float"
-    }
   },
 
   "commands":
   {
     
-    "Custom command":
+    "Previous Snapshot":
     {
       "menu":"",  
-      "callback":"customCmd",
+      "callback":"previousSnapshot",
       "parameters":
       {
-        "Value":
+      }
+    },
+    "Next Snapshot":
+    {
+      "menu":"",  
+      "callback":"nextSnapshot",
+      "parameters":
+      {
+      }
+    },
+    "Previous Reverb Preset":
+    {
+      "menu":"",  
+      "callback":"previousReverbPreset",
+      "parameters":
+      {
+      }
+    },
+    "Next Reverb Preset":
+    {
+      "menu":"",  
+      "callback":"nextReverbPreset",
+      "parameters":
+      {
+      }
+    },
+    "Master Gain":
+    {
+      "menu":"",  
+      "callback":"masterGain",
+      "parameters":
+      {
+        "GaindB":
         {
-          "type":"Integer",
-          "min":0,
-          "max":100,
+          "type":"Float",
+          "min":-80,
+          "max":10,
           "default":0
         }
+      }
+    },
+    "BPM":
+    {
+      "menu":"",  
+      "callback":"bpm",
+      "parameters":
+      {
+        "BPM":
+        {
+          "type":"Float",
+          "min":0,
+          "max":300,
+          "default":120
+        }
+      }
+    },
+    "Restart Orbits":
+    {
+      "menu":"",  
+      "callback":"restartOrbits",
+      "parameters":
+      {
       }
     }
   }
