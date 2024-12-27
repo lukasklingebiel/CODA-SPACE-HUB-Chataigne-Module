@@ -23,7 +23,7 @@
     "OSC Outputs": {
 			"OSC Output": {
 				"local": true,
-				"remoteHost": "192.168.1.1",
+				"remoteHost": "127.0.0.1",
 				"remotePort": 9301
 			}
 		}
@@ -33,7 +33,17 @@
   {
   },
 
-  "hideDefaultParameters": [ "autoAdd", "oscInput/localPort"],
+  "hideDefaultParameters": [
+		"colorSendMode",
+    "autoAdd",
+		"autoRange",
+		"autoFeedback",
+		"input",
+		"outputs",
+		"useHierarchy",
+		"colorSendMode",
+		"booleanSendMode"
+	],
 
   "scripts": 
   [
@@ -63,6 +73,18 @@
       {
       }
     },
+    "Load Snapshot":
+    {
+      "menu":"",  
+      "callback":"loadSnapshot",
+      "parameters":
+      {
+        "Snapshot":
+        {
+          "type":"Integer"
+        }
+      }
+    },
     "Previous Reverb Preset":
     {
       "menu":"",  
@@ -79,6 +101,106 @@
       {
       }
     },
+    "Load Reverb Preset":
+    {
+      "menu":"",  
+      "callback":"loadReverbPreset",
+      "parameters":
+      {
+        "ReverbPreset":
+        {
+          "type":"Integer"
+        }
+      }
+    },
+    "Reverb Level":
+    {
+      "menu":"",  
+      "callback":"reverbLevel",
+      "parameters":
+      {
+        "Level":
+        {
+          "type":"Float",
+          "min":-80,
+          "max":10,
+          "default":0
+        }
+      }
+    },
+    "Reverb Mute":
+    {
+      "menu":"",  
+      "callback":"reverbMute",
+      "parameters":
+      {
+        "Mute":
+        {
+          "type":"Boolean",
+          "default":false
+        }
+      }
+    },
+    "Reverb Direct Level":
+    {
+      "menu":"",  
+      "callback":"reverbDirectLevel",
+      "parameters":
+      {
+        "Level":
+        {
+          "type":"Float",
+          "min":-80,
+          "max":10,
+          "default":0
+        }
+      }
+    },
+    "Reverb Early Level":
+    {
+      "menu":"",  
+      "callback":"reverbEarlyLevel",
+      "parameters":
+      {
+        "Level":
+        {
+          "type":"Float",
+          "min":-80,
+          "max":10,
+          "default":0
+        }
+      }
+    },
+    "Reverb Cluster Level":
+    {
+      "menu":"",  
+      "callback":"reverbClusterLevel",
+      "parameters":
+      {
+        "Level":
+        {
+          "type":"Float",
+          "min":-80,
+          "max":10,
+          "default":0
+        }
+      }
+    },
+    "Reverb Late Level":
+    {
+      "menu":"",  
+      "callback":"reverbLateLevel",
+      "parameters":
+      {
+        "Level":
+        {
+          "type":"Float",
+          "min":-80,
+          "max":10,
+          "default":0
+        }
+      }
+    },
     "Master Gain":
     {
       "menu":"",  
@@ -91,6 +213,19 @@
           "min":-80,
           "max":10,
           "default":0
+        }
+      }
+    },
+    "Master Mute":
+    {
+      "menu":"",  
+      "callback":"masterMute",
+      "parameters":
+      {
+        "Mute":
+        {
+          "type":"Boolean",
+          "default":false
         }
       }
     },

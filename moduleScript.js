@@ -31,6 +31,16 @@ function nextSnapshot() {
   local.send("/snapshot/next");
 }
 
+// Load Snapshot
+// /snapshot/*/load
+// Param: f
+// seconds
+// Example: /snapshot/1/load 0.0
+// optional argument = Fade Time
+function loadSnapshot(index) {
+  local.send("/snapshot/" + index + "/load");
+}
+
 // Previous Reverb Preset
 // /reverb/prev
 // Example: /reverb/prev
@@ -45,13 +55,79 @@ function nextReverbPreset() {
   local.send("/reverb/next");
 }
 
+// Load Reverb Preset
+// /reverb/*/load
+// Example: /reverb/1/load
+function loadReverbPreset(index) {
+  local.send("/reverb/" + index + "/load");
+}
+
+// Reverb Level dB
+// /reverb/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /reverb/leveldB -6dB
+function reverbLevel(val) {
+  local.send("/reverb/leveldB", val);
+}
+
+// Reverb Mute
+// /reverb/mute
+// Example: /reverb/mute 1
+function reverbMute(val) {
+  local.send("/reverb/mute", val);
+}
+
+// Reverb Direct Level dB
+// /reverb/directleveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /reverb/directleveldB -6dB
+function reverbDirectLevel(val) {
+  local.send("/reverb/directleveldB", val);
+}
+
+// Reverb Early Level dB
+// /reverb/earlyleveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /reverb/earlyleveldB -6dB
+function reverbEarlyLevel(val) {
+  local.send("/reverb/earlyleveldB", val);
+}
+
+// Reverb Cluster Level dB
+// /reverb/clusterleveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /reverb/clusterleveldB -6dB
+function reverbClusterLevel(val) {
+  local.send("/reverb/clusterleveldB", val);
+}
+
+// Reverb Late Level dB
+// /reverb/lateleveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /reverb/lateleveldB -6dB
+function reverbLateLevel(val) {
+  local.send("/reverb/lateleveldB", val);
+}
+
 // Master Level dB
 // /master/gaindB
 // Param: f
-// Range: -80 - 0dB
+// Range: -80 - 10dB
 // Example: /master/gaindB -6dB
 function masterGain(val) {
   local.send("/master/gaindB", val);
+}
+
+// Master Mute
+// /master/mute
+// Example: /master/mute 1
+function masterMute(val) {
+  local.send("/master/mute", val);
 }
 
 // BPM
