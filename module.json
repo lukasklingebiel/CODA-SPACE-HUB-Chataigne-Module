@@ -59,7 +59,7 @@
     
     "Previous Snapshot":
     {
-      "menu":"",  
+      "menu":"Snapshot",  
       "callback":"previousSnapshot",
       "parameters":
       {
@@ -67,7 +67,7 @@
     },
     "Next Snapshot":
     {
-      "menu":"",  
+      "menu":"Snapshot",  
       "callback":"nextSnapshot",
       "parameters":
       {
@@ -75,7 +75,7 @@
     },
     "Load Snapshot":
     {
-      "menu":"",  
+      "menu":"Snapshot",  
       "callback":"loadSnapshot",
       "parameters":
       {
@@ -87,7 +87,7 @@
     },
     "Previous Reverb Preset":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"previousReverbPreset",
       "parameters":
       {
@@ -95,7 +95,7 @@
     },
     "Next Reverb Preset":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"nextReverbPreset",
       "parameters":
       {
@@ -103,7 +103,7 @@
     },
     "Load Reverb Preset":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"loadReverbPreset",
       "parameters":
       {
@@ -115,7 +115,7 @@
     },
     "Reverb Level":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"reverbLevel",
       "parameters":
       {
@@ -130,7 +130,7 @@
     },
     "Reverb Mute":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"reverbMute",
       "parameters":
       {
@@ -143,7 +143,7 @@
     },
     "Reverb Direct Level":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"reverbDirectLevel",
       "parameters":
       {
@@ -158,7 +158,7 @@
     },
     "Reverb Early Level":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"reverbEarlyLevel",
       "parameters":
       {
@@ -173,7 +173,7 @@
     },
     "Reverb Cluster Level":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"reverbClusterLevel",
       "parameters":
       {
@@ -188,7 +188,7 @@
     },
     "Reverb Late Level":
     {
-      "menu":"",  
+      "menu":"Reverb",  
       "callback":"reverbLateLevel",
       "parameters":
       {
@@ -203,7 +203,7 @@
     },
     "Master Gain":
     {
-      "menu":"",  
+      "menu":"Master",  
       "callback":"masterGain",
       "parameters":
       {
@@ -218,7 +218,7 @@
     },
     "Master Mute":
     {
-      "menu":"",  
+      "menu":"Master",  
       "callback":"masterMute",
       "parameters":
       {
@@ -231,7 +231,7 @@
     },
     "BPM":
     {
-      "menu":"",  
+      "menu":"Global",  
       "callback":"bpm",
       "parameters":
       {
@@ -246,7 +246,7 @@
     },
     "Restart Orbits":
     {
-      "menu":"",  
+      "menu":"Global",  
       "callback":"restartOrbits",
       "parameters":
       {
