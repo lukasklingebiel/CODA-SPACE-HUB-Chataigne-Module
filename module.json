@@ -59,18 +59,6 @@
         "Solo": {
           "type": "Boolean"
         }
-      },
-      "Object 2": {
-        "type": "Container",
-        "Name": {
-          "type": "String"
-        },
-        "Mute": {
-          "type": "Boolean"
-        },
-        "Solo": {
-          "type": "Boolean"
-        }
       }
     }
   },
@@ -109,7 +97,7 @@
       "menu": "Reverb",
       "callback": "loadReverbPreset",
       "parameters": {
-        "ReverbPreset": {
+        "Reverb Preset": {
           "type": "Integer"
         }
       }
@@ -118,7 +106,7 @@
       "menu": "Reverb",
       "callback": "reverbLevel",
       "parameters": {
-        "Level": {
+        "Reverb Level": {
           "type": "Float",
           "min": -80,
           "max": 10,
@@ -130,7 +118,7 @@
       "menu": "Reverb",
       "callback": "reverbMute",
       "parameters": {
-        "Mute": {
+        "Reverb Mute": {
           "type": "Boolean",
           "default": false
         }
@@ -140,7 +128,7 @@
       "menu": "Reverb",
       "callback": "reverbDirectLevel",
       "parameters": {
-        "Level": {
+        "Direct Level": {
           "type": "Float",
           "min": -80,
           "max": 10,
@@ -152,7 +140,7 @@
       "menu": "Reverb",
       "callback": "reverbEarlyLevel",
       "parameters": {
-        "Level": {
+        "Early Level": {
           "type": "Float",
           "min": -80,
           "max": 10,
@@ -164,7 +152,7 @@
       "menu": "Reverb",
       "callback": "reverbClusterLevel",
       "parameters": {
-        "Level": {
+        "Cluster Level": {
           "type": "Float",
           "min": -80,
           "max": 10,
@@ -176,7 +164,7 @@
       "menu": "Reverb",
       "callback": "reverbLateLevel",
       "parameters": {
-        "Level": {
+        "Late Level": {
           "type": "Float",
           "min": -80,
           "max": 10,
@@ -184,11 +172,155 @@
         }
       }
     },
+    "Mono Level": {
+      "menu": "Downmix",
+      "callback": "downmixMonoLevel",
+      "parameters": {
+        "Mono Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "Mono Mute": {
+      "menu": "Downmix",
+      "callback": "downmixMonoMute",
+      "parameters": {
+        "Mono Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Stereo Level": {
+      "menu": "Downmix",
+      "callback": "downmixStereoLevel",
+      "parameters": {
+        "Stereo Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "Stereo Mute": {
+      "menu": "Downmix",
+      "callback": "downmixStereoMute",
+      "parameters": {
+        "Stereo Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Stereo Focus": {
+      "menu": "Downmix",
+      "callback": "downmixStereoFocus",
+      "parameters": {
+        "Stereo Focus": {
+          "type": "Float",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0
+        }
+      }
+    },
+    "LFE1 Level": {
+      "menu": "Downmix",
+      "callback": "downmixLFE1Level",
+      "parameters": {
+        "LFE1 Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "LFE1 Mute": {
+      "menu": "Downmix",
+      "callback": "downmixLFE1Mute",
+      "parameters": {
+        "LFE1 Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "LFE2 Level": {
+      "menu": "Downmix",
+      "callback": "downmixLFE2Level",
+      "parameters": {
+        "LFE2 Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "LFE2 Mute": {
+      "menu": "Downmix",
+      "callback": "downmixLFE2Mute",
+      "parameters": {
+        "LFE2 Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "PFL Level": {
+      "menu": "Downmix",
+      "callback": "downmixPFLLevel",
+      "parameters": {
+        "PFL Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "PFL Mute": {
+      "menu": "Downmix",
+      "callback": "downmixPFLMute",
+      "parameters": {
+        "PFL Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Binaural Level": {
+      "menu": "Downmix",
+      "callback": "downmixBinauralLevel",
+      "parameters": {
+        "Binaural Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "Binaural Mute": {
+      "menu": "Downmix",
+      "callback": "downmixBinauralMute",
+      "parameters": {
+        "Binaural Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
     "Master Gain": {
       "menu": "Master",
       "callback": "masterGain",
       "parameters": {
-        "GaindB": {
+        "Master Level": {
           "type": "Float",
           "min": -80,
           "max": 10,
@@ -200,7 +332,17 @@
       "menu": "Master",
       "callback": "masterMute",
       "parameters": {
-        "Mute": {
+        "Master Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Global Play": {
+      "menu": "Global",
+      "callback": "globalPlay",
+      "parameters": {
+        "Global Play": {
           "type": "Boolean",
           "default": false
         }

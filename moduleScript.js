@@ -69,6 +69,22 @@ function objectName(index, name) {
   local.send("/source/" + index + "/name", name);
 }
 
+/*###############################################
+ * Groups
+ ###############################################*/
+
+// TODO
+
+/*###############################################
+ * VCA
+ ###############################################*/
+
+// TODO
+
+/*###############################################
+ * Snapshot
+ ###############################################*/
+
 // Prev Snapshot
 // /snapshot/prev
 // Param: f
@@ -98,6 +114,10 @@ function nextSnapshot() {
 function loadSnapshot(index) {
   local.send("/snapshot/" + index + "/load");
 }
+
+/*###############################################
+ * Reverb
+ ###############################################*/
 
 // Previous Reverb Preset
 // /reverb/prev
@@ -172,6 +192,119 @@ function reverbLateLevel(val) {
   local.send("/reverb/lateleveldB", val);
 }
 
+/*###############################################
+ * Downmix
+ ###############################################*/
+
+// Mono Level dB
+// /downmix/mono/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /downmix/mono/leveldB -6dB
+function downmixMonoLevel(val) {
+  local.send("/downmix/mono/leveldB", val);
+}
+
+// Mono Mute
+// /downmix/mono/mute
+// Example: /downmix/mono/mute 1
+function downmixMonoMute(val) {
+  local.send("/downmix/mono/mute", val);
+}
+
+// Stereo Level dB
+// /downmix/stereo/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /downmix/stereo/leveldB -6dB
+function downmixStereoLevel(val) {
+  local.send("/downmix/stereo/leveldB", val);
+}
+
+// Stereo Mute
+// /downmix/stereo/mute
+// Example: /downmix/stereo/mute 1
+function downmixStereoMute(val) {
+  local.send("/downmix/stereo/mute", val);
+}
+
+// Stereo Focus
+// /downmix/stereo/focusfrontback
+// Param: f
+// Range: -1 - 1
+// Example: /downmix/stereo/focusfrontback 0
+function downmixStereoFocus(val) {
+  local.send("/downmix/stereo/focusfrontback", val);
+}
+
+// LFE1 Level dB
+// /downmix/lfe1/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /downmix/lfe1/leveldB -6dB
+function downmixLFE1Level(val) {
+  local.send("/downmix/lfe1/leveldB", val);
+}
+
+// LFE1 Mute
+// /downmix/lfe1/mute
+// Example: /downmix/lfe1/mute 1
+function downmixLFE1Mute(val) {
+  local.send("/downmix/lfe1/mute", val);
+}
+
+// LFE2 Level dB
+// /downmix/lfe2/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /downmix/lfe2/leveldB -6dB
+function downmixLFE2Level(val) {
+  local.send("/downmix/lfe2/leveldB", val);
+}
+
+// LFE2 Mute
+// /downmix/lfe2/mute
+// Example: /downmix/lfe2/mute 1
+function downmixLFE2Mute(val) {
+  local.send("/downmix/lfe2/mute", val);
+}
+
+// PFL Level dB
+// /downmix/pfl/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /downmix/pfl/leveldB -6dB
+function downmixPFLLevel(val) {
+  local.send("/downmix/pfl/leveldB", val);
+}
+
+// PFL Mute
+// /downmix/pfl/mute
+// Example: /downmix/pfl/mute 1
+function downmixPFLMute(val) {
+  local.send("/downmix/pfl/mute", val);
+}
+
+// Binaural Level dB
+// /downmix/binaural/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /downmix/binaural/leveldB -6dB
+function downmixBinauralLevel(val) {
+  local.send("/downmix/binaural/leveldB", val);
+}
+
+// Binaural Mute
+// /downmix/binaural/mute
+// Example: /downmix/binaural/mute 1
+function downmixBinauralMute(val) {
+  local.send("/downmix/binaural/mute", val);
+}
+
+/*###############################################
+ * Additional
+ ###############################################*/
+
 // Master Level dB
 // /master/gaindB
 // Param: f
@@ -186,6 +319,13 @@ function masterGain(val) {
 // Example: /master/mute 1
 function masterMute(val) {
   local.send("/master/mute", val);
+}
+
+// Global Play
+// /global/play
+// Example: /global/play 1
+function globalPlay(val) {
+  local.send("/global/play", val);
 }
 
 // BPM
