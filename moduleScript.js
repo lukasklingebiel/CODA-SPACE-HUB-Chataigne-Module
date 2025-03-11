@@ -1,14 +1,72 @@
+// Globals
+var Objects = [];
+
 function init() {
-  script.log("Custom module init");
+  script.log("SPACE HUB Control module init");
+
+  createObjectContainer();
 }
 
-
 function moduleParameterChanged(param) {
-  script.log(param.name + " parameter changed, new value: " + param.get());
+  script.log("Param: " + param.name + " parameter changed, new value: " + param.get());
 }
 
 function moduleValueChanged(value) {
-  script.log(value.name + " value changed, new value: " + value.get());
+  var valName = value.name;
+  var container = value.getParent();
+  script.log(container);
+  script.log("Val: " + valName + " value changed, new value: " + value.get() + "; Object ID: " + container.ID);
+
+  if (valName == "name") {
+    objectName(container.ID, value.get());
+  }
+  else if (valName == "mute") {
+    // TODO: Update Object Mute
+  }
+  else if (valName == "solo") {
+    //  TODO: Update Object Solo
+  }
+}
+
+function createObjectContainer() {
+  ObjectsContainer = local.values.addContainer("Objects Container");
+
+  for (var i = 0; i < 128; i++) {
+    var objID = i + 1;
+    Objects.push({
+      "ID": objID
+    });
+    Objects[i].ObjectContainer = ObjectsContainer.addContainer(
+      "Object " + objID
+    );
+
+    // TODO: Add Object Parameters
+    Objects[i].sourceName = Objects[i].ObjectContainer.addStringParameter(
+      "Name",
+      "Name",
+      "Name"
+    );
+
+    Objects[i].mute = Objects[i].ObjectContainer.addBoolParameter(
+      "Mute",
+      "Mute",
+      0
+    );
+
+    Objects[i].solo = Objects[i].ObjectContainer.addBoolParameter(
+      "Solo",
+      "Solo",
+      0
+    );
+  }
+}
+
+// Object Name
+// /source/*/name
+// Param: s
+// Example: /source/1/name "Name"
+function objectName(index, name) {
+  local.send("/source/" + index + "/name", name);
 }
 
 // Prev Snapshot

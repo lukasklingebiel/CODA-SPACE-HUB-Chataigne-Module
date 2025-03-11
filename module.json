@@ -1,18 +1,18 @@
 {
-  "name":"SPACE HUB Control",
-  "type":"OSC",
-  "path":"Immersive solution",
-  
-  "version":"1.0.0",
-  "description":"CODA Audio SPACE HUB Control",
-  "url":"https://github.com/tommag/Sample-Chataigne-module",
-  "downloadURL":"https://github.com/tommag/Sample-Chataigne-module/archive/master.zip",
+  "name": "SPACE HUB Control",
+  "type": "OSC",
+  "path": "Immersive solution",
 
-  "hasInput":true,
-  "hasOutput":true, 
+  "version": "1.0.0",
+  "description": "CODA Audio SPACE HUB Control",
+  "url": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module",
+  "downloadURL": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module/archive/master.zip",
 
-  "hideDefaultCommands":false,
-  
+  "hasInput": true,
+  "hasOutput": true,
+
+  "hideDefaultCommands": false,
+
   "defaults":
   {	
     "autoAdd":false,
@@ -29,228 +29,199 @@
 		}
   },
 
-  "parameters":
-  {
-  },
+  "parameters": {},
 
   "hideDefaultParameters": [
-		"colorSendMode",
+    "colorSendMode",
     "autoAdd",
-		"autoRange",
-		"autoFeedback",
-		"input",
-		"outputs",
-		"useHierarchy",
-		"colorSendMode",
-		"booleanSendMode"
-	],
-
-  "scripts": 
-  [
-    "moduleScript.js"
+    "autoRange",
+    "autoFeedback",
+    "input",
+    "outputs",
+    "useHierarchy",
+    "colorSendMode",
+    "booleanSendMode"
   ],
 
-  "values":
-  {
+  "scripts": ["moduleScript.js"],
+
+  "values": {
+    "Objects Container": {
+      "type": "Container",
+      "Object 1": {
+        "type": "Container",
+        "Name": {
+          "type": "String"
+        },
+        "Mute": {
+          "type": "Boolean"
+        },
+        "Solo": {
+          "type": "Boolean"
+        }
+      },
+      "Object 2": {
+        "type": "Container",
+        "Name": {
+          "type": "String"
+        },
+        "Mute": {
+          "type": "Boolean"
+        },
+        "Solo": {
+          "type": "Boolean"
+        }
+      }
+    }
   },
 
-  "commands":
-  {
-    
-    "Previous Snapshot":
-    {
-      "menu":"Snapshot",  
-      "callback":"previousSnapshot",
-      "parameters":
-      {
-      }
+  "commands": {
+    "Previous Snapshot": {
+      "menu": "Snapshot",
+      "callback": "previousSnapshot",
+      "parameters": {}
     },
-    "Next Snapshot":
-    {
-      "menu":"Snapshot",  
-      "callback":"nextSnapshot",
-      "parameters":
-      {
-      }
+    "Next Snapshot": {
+      "menu": "Snapshot",
+      "callback": "nextSnapshot",
+      "parameters": {}
     },
-    "Load Snapshot":
-    {
-      "menu":"Snapshot",  
-      "callback":"loadSnapshot",
-      "parameters":
-      {
-        "Snapshot":
-        {
-          "type":"Integer"
+    "Load Snapshot": {
+      "menu": "Snapshot",
+      "callback": "loadSnapshot",
+      "parameters": {
+        "Snapshot": {
+          "type": "Integer"
         }
       }
     },
-    "Previous Reverb Preset":
-    {
-      "menu":"Reverb",  
-      "callback":"previousReverbPreset",
-      "parameters":
-      {
-      }
+    "Previous Reverb Preset": {
+      "menu": "Reverb",
+      "callback": "previousReverbPreset",
+      "parameters": {}
     },
-    "Next Reverb Preset":
-    {
-      "menu":"Reverb",  
-      "callback":"nextReverbPreset",
-      "parameters":
-      {
-      }
+    "Next Reverb Preset": {
+      "menu": "Reverb",
+      "callback": "nextReverbPreset",
+      "parameters": {}
     },
-    "Load Reverb Preset":
-    {
-      "menu":"Reverb",  
-      "callback":"loadReverbPreset",
-      "parameters":
-      {
-        "ReverbPreset":
-        {
-          "type":"Integer"
+    "Load Reverb Preset": {
+      "menu": "Reverb",
+      "callback": "loadReverbPreset",
+      "parameters": {
+        "ReverbPreset": {
+          "type": "Integer"
         }
       }
     },
-    "Reverb Level":
-    {
-      "menu":"Reverb",  
-      "callback":"reverbLevel",
-      "parameters":
-      {
-        "Level":
-        {
-          "type":"Float",
-          "min":-80,
-          "max":10,
-          "default":0
+    "Reverb Level": {
+      "menu": "Reverb",
+      "callback": "reverbLevel",
+      "parameters": {
+        "Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
         }
       }
     },
-    "Reverb Mute":
-    {
-      "menu":"Reverb",  
-      "callback":"reverbMute",
-      "parameters":
-      {
-        "Mute":
-        {
-          "type":"Boolean",
-          "default":false
+    "Reverb Mute": {
+      "menu": "Reverb",
+      "callback": "reverbMute",
+      "parameters": {
+        "Mute": {
+          "type": "Boolean",
+          "default": false
         }
       }
     },
-    "Reverb Direct Level":
-    {
-      "menu":"Reverb",  
-      "callback":"reverbDirectLevel",
-      "parameters":
-      {
-        "Level":
-        {
-          "type":"Float",
-          "min":-80,
-          "max":10,
-          "default":0
+    "Reverb Direct Level": {
+      "menu": "Reverb",
+      "callback": "reverbDirectLevel",
+      "parameters": {
+        "Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
         }
       }
     },
-    "Reverb Early Level":
-    {
-      "menu":"Reverb",  
-      "callback":"reverbEarlyLevel",
-      "parameters":
-      {
-        "Level":
-        {
-          "type":"Float",
-          "min":-80,
-          "max":10,
-          "default":0
+    "Reverb Early Level": {
+      "menu": "Reverb",
+      "callback": "reverbEarlyLevel",
+      "parameters": {
+        "Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
         }
       }
     },
-    "Reverb Cluster Level":
-    {
-      "menu":"Reverb",  
-      "callback":"reverbClusterLevel",
-      "parameters":
-      {
-        "Level":
-        {
-          "type":"Float",
-          "min":-80,
-          "max":10,
-          "default":0
+    "Reverb Cluster Level": {
+      "menu": "Reverb",
+      "callback": "reverbClusterLevel",
+      "parameters": {
+        "Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
         }
       }
     },
-    "Reverb Late Level":
-    {
-      "menu":"Reverb",  
-      "callback":"reverbLateLevel",
-      "parameters":
-      {
-        "Level":
-        {
-          "type":"Float",
-          "min":-80,
-          "max":10,
-          "default":0
+    "Reverb Late Level": {
+      "menu": "Reverb",
+      "callback": "reverbLateLevel",
+      "parameters": {
+        "Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
         }
       }
     },
-    "Master Gain":
-    {
-      "menu":"Master",  
-      "callback":"masterGain",
-      "parameters":
-      {
-        "GaindB":
-        {
-          "type":"Float",
-          "min":-80,
-          "max":10,
-          "default":0
+    "Master Gain": {
+      "menu": "Master",
+      "callback": "masterGain",
+      "parameters": {
+        "GaindB": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
         }
       }
     },
-    "Master Mute":
-    {
-      "menu":"Master",  
-      "callback":"masterMute",
-      "parameters":
-      {
-        "Mute":
-        {
-          "type":"Boolean",
-          "default":false
+    "Master Mute": {
+      "menu": "Master",
+      "callback": "masterMute",
+      "parameters": {
+        "Mute": {
+          "type": "Boolean",
+          "default": false
         }
       }
     },
-    "BPM":
-    {
-      "menu":"Global",  
-      "callback":"bpm",
-      "parameters":
-      {
-        "BPM":
-        {
-          "type":"Float",
-          "min":0,
-          "max":300,
-          "default":120
+    "BPM": {
+      "menu": "Global",
+      "callback": "bpm",
+      "parameters": {
+        "BPM": {
+          "type": "Float",
+          "min": 0,
+          "max": 300,
+          "default": 120
         }
       }
     },
-    "Restart Orbits":
-    {
-      "menu":"Global",  
-      "callback":"restartOrbits",
-      "parameters":
-      {
-      }
+    "Restart Orbits": {
+      "menu": "Global",
+      "callback": "restartOrbits",
+      "parameters": {}
     }
   }
 }
