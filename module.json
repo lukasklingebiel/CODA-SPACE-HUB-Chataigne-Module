@@ -47,23 +47,173 @@
 
   "values": {
     "Objects Container": {
-      "type": "Container",
-      "Object 1": {
-        "type": "Container",
-        "Name": {
-          "type": "String"
-        },
-        "Mute": {
-          "type": "Boolean"
-        },
-        "Solo": {
-          "type": "Boolean"
-        }
-      }
+      "type": "Container"
     }
   },
 
   "commands": {
+    "Object Name": {
+      "menu": "Object",
+      "callback": "objectName",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Name": {
+          "type": "String",
+          "default": "Object"
+        }
+      }
+    },
+    "Object Solo": {
+      "menu": "Object",
+      "callback": "objectSolo",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Solo": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Object Mute": {
+      "menu": "Object",
+      "callback": "objectMute",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Object Spread": {
+      "menu": "Object",
+      "callback": "objectSpread",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Spread": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 100.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Object KNN K": {
+      "menu": "Object",
+      "callback": "objectKNN",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object KNN K": {
+          "type": "Integer",
+          "min": 0,
+          "max": 128,
+          "default": 2
+        }
+      }
+    },
+    "Object LFE1 Send": {
+      "menu": "Object",
+      "callback": "objectLFE1Send",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object LFE1 Send": {
+          "type": "Float",
+          "min": -80.0,
+          "max": 10.0,
+          "default": -80.0
+        }
+      }
+    },
+    "Object LFE2 Send": {
+      "menu": "Object",
+      "callback": "objectLFE2Send",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object LFE2 Send": {
+          "type": "Float",
+          "min": -80.0,
+          "max": 10.0,
+          "default": -80.0
+        }
+      }
+    },
+    "Object Polarity Invert": {
+      "menu": "Object",
+      "callback": "objectPolarityInvert",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Polarity Invert": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Object Random Play": {
+      "menu": "Object",
+      "callback": "objectRandomPlay",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Random Play": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Object Orbit Play": {
+      "menu": "Object",
+      "callback": "objectOrbitPlay",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Orbit Play": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Object Orbit Restart": {
+      "menu": "Object",
+      "callback": "objectOrbitRestart",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        }
+      }
+    },
+    "Object Level": {
+      "menu": "Object",
+      "callback": "objectLevel",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
     "Previous Snapshot": {
       "menu": "Snapshot",
       "callback": "previousSnapshot",

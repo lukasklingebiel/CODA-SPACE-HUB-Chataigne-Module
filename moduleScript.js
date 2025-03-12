@@ -14,17 +14,44 @@ function moduleParameterChanged(param) {
 function moduleValueChanged(value) {
   var valName = value.name;
   var container = value.getParent();
-  script.log(container);
-  script.log("Val: " + valName + " value changed, new value: " + value.get() + "; Object ID: " + container.ID);
+  var idx = container.getChild("ObjID").get();
+  script.log("Val: " + valName + " value changed, new value: " + value.get() + "; Object ID: " + idx);
 
   if (valName == "name") {
-    objectName(container.ID, value.get());
+    objectName(idx, value.get());
   }
   else if (valName == "mute") {
-    // TODO: Update Object Mute
+    objectMute(idx, value.get());
   }
   else if (valName == "solo") {
-    //  TODO: Update Object Solo
+    objectSolo(idx, value.get());
+  }
+  else if (valName == "spread") {
+    objectSpread(idx, value.get());
+  }
+  else if (valName == "knnK") {
+    objectKNN(idx, value.get());
+  }
+  else if (valName == "lfe1Send") {
+    objectLFE1Send(idx, value.get());
+  }
+  else if (valName == "lfe2Send") {
+    objectLFE2Send(idx, value.get());
+  }
+  else if (valName == "polarityInvert") {
+    objectPolarityInvert(idx, value.get());
+  }
+  else if (valName == "levelDB") {
+    objectLevel(idx, value.get());
+  }
+  else if (valName == "randomPlay") {
+    objectRandomPlay(idx, value.get());
+  }
+  else if (valName == "orbitPlay") {
+    objectOrbitPlay(idx, value.get());
+  }
+  else {
+    script.log("Unknown value: " + valName);
   }
 }
 
@@ -39,6 +66,10 @@ function createObjectContainer() {
     Objects[i].ObjectContainer = ObjectsContainer.addContainer(
       "Object " + objID
     );
+    Objects[i].ObjectContainer.setCollapsed(true);
+
+    // TODO: Hide Object ID
+    Objects[i].objID = Objects[i].ObjectContainer.addIntParameter("ObjID", "ObjID", objID, {"readOnly": true});
 
     // TODO: Add Object Parameters
     Objects[i].sourceName = Objects[i].ObjectContainer.addStringParameter(
@@ -58,6 +89,64 @@ function createObjectContainer() {
       "Solo",
       0
     );
+
+    Objects[i].spread = Objects[i].ObjectContainer.addFloatParameter(
+      "Spread",
+      "Spread",
+      0.0,
+      0.0,
+      100.0
+    );
+
+    Objects[i].kNeighbours = Objects[i].ObjectContainer.addIntParameter(
+      "KNN K",
+      "KNN K",
+      2,
+      0,
+      128
+    );
+
+    Objects[i].lfe1Send = Objects[i].ObjectContainer.addFloatParameter(
+      "LFE1 Send",
+      "LFE1 Send",
+      -80.0,
+      -80.0,
+      10.0
+    );
+
+    Objects[i].lfe2Send = Objects[i].ObjectContainer.addFloatParameter(
+      "LFE2 Send",
+      "LFE2 Send",
+      -80.0,
+      -80.0,
+      10.0
+    );
+
+    Objects[i].polarityInvert = Objects[i].ObjectContainer.addBoolParameter(
+      "Polarity Invert",
+      "Polarity Invert",
+      0
+    );
+
+    Objects[i].leveldB = Objects[i].ObjectContainer.addFloatParameter(
+      "Level dB",
+      "Level dB",
+      0.0,
+      -80.0,
+      10.0
+    );
+
+    Objects[i].randomPlay = Objects[i].ObjectContainer.addBoolParameter(
+      "Random Play",
+      "Random Play",
+      0
+    );
+
+    Objects[i].orbitPlay = Objects[i].ObjectContainer.addBoolParameter(
+      "Orbit Play",
+      "Orbit Play",
+      0
+    );
   }
 }
 
@@ -68,6 +157,93 @@ function createObjectContainer() {
 function objectName(index, name) {
   local.send("/source/" + index + "/name", name);
 }
+
+// Object Mute
+// /source/*/mute
+// Example: /source/1/mute 1
+function objectMute(index, val) {
+  local.send("/source/" + index + "/mute", val);
+}
+
+// Object Solo
+// /source/*/solo
+// Example: /source/1/solo 1
+function objectSolo(index, val) {
+  local.send("/source/" + index + "/solo", val);
+}
+
+// Object Spread
+// /source/*/spread
+// Param: f
+// Range: 0 - 100
+// Example: /source/1/spread 50
+function objectSpread(index, val) {
+  local.send("/source/" + index + "/spread", val);
+}
+
+// Object KNN K
+// /source/*/kneighbours
+// Param: i
+// Example: /source/1/kneighbours 4
+function objectKNN(index, val) {
+  local.send("/source/" + index + "/kneighbours", val);
+}
+
+// Object LFE1 Send
+// /source/*/lfe1
+// Param: f
+// Range: -80 - 10dB
+// Example: /source/1/lfe1 -6dB
+function objectLFE1Send(index, val) {
+  local.send("/source/" + index + "/lfe1", val);
+}
+
+// Object LFE2 Send
+// /source/*/lfe2
+// Param: f
+// Range: -80 - 10dB
+// Example: /source/1/lfe2 -6dB
+function objectLFE2Send(index, val) {
+  local.send("/source/" + index + "/lfe2", val);
+}
+
+// Object Polarity Invert
+// /source/*/invertphase
+// Example: /source/1/invertphase 1
+function objectPolarityInvert(index, val) {
+  local.send("/source/" + index + "/invertphase", val);
+}
+
+// Object Level dB
+// /source/*/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /source/1/leveldB -6dB
+function objectLevel(index, val) {
+  local.send("/source/" + index + "/leveldB", val);
+}
+
+// Object Random Play
+// /source/*/random/play
+// Example: /source/1/random/play 1
+function objectRandomPlay(index, val) {
+  local.send("/source/" + index + "/random/play", val);
+}
+
+// Object Orbit Play
+// /source/*/orbit/play
+// Example: /source/1/orbit/play 1
+function objectOrbitPlay(index, val) {
+  local.send("/source/" + index + "/orbit/play", val);
+}
+
+// Object Orbit Restart
+// /source/*/orbit/restart
+// Example: /source/1/orbit/restart
+function objectOrbitRestart(index) {
+  local.send("/source/" + index + "/orbit/restart");
+}
+
 
 /*###############################################
  * Groups
@@ -191,6 +367,8 @@ function reverbClusterLevel(val) {
 function reverbLateLevel(val) {
   local.send("/reverb/lateleveldB", val);
 }
+
+// TODO: Reverb Parameters
 
 /*###############################################
  * Downmix
