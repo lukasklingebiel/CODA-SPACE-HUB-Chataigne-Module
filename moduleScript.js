@@ -14,7 +14,7 @@ function moduleParameterChanged(param) {
 function moduleValueChanged(value) {
   var valName = value.name;
   var container = value.getParent();
-  var idx = container.getChild("ObjID").get();
+  var idx = container.getChild("ObjectID").get();
   script.log("Val: " + valName + " value changed, new value: " + value.get() + "; Object ID: " + idx);
 
   if (valName == "name") {
@@ -69,7 +69,8 @@ function createObjectContainer() {
     Objects[i].ObjectContainer.setCollapsed(true);
 
     // TODO: Hide Object ID
-    Objects[i].objID = Objects[i].ObjectContainer.addIntParameter("ObjID", "ObjID", objID, {"readOnly": true});
+    Objects[i].objID = Objects[i].ObjectContainer.addIntParameter("Object ID", "Object ID", objID);
+    Objects[i].objID.setAttribute("readOnly", true);
 
     // TODO: Add Object Parameters
     Objects[i].sourceName = Objects[i].ObjectContainer.addStringParameter(
