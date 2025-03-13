@@ -15,4 +15,4 @@ More info about Chataigne : https://benjamin.kuperberg.fr/chataigne
 
 > [!TIP]
 > This Chataigne module sends OSC commands to the SPACE HUB Control software, not to the SPACE HUB Processor itself.
-> The SPACE HUB Control software filters, sorts and applies incoming control protocols (including OSC commands from this module) and routes 
+> The SPACE HUB Control software filters, sorts and applies incoming control protocols (including OSC commands from this module) and routes them to the connected SPACE HUB Processors.
