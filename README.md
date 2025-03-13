@@ -1,6 +1,18 @@
-# Sample-Chataigne-module
-This is a sample Chataigne custom module. More info about Chataigne : https://benjamin.kuperberg.fr/chataigne
+# CODA-SPACE-HUB-Chataigne-Module
+This is a Chataigne module to control CODA Audio SPACE HUB Control using the OSC protocol.
 
-To create a custom module, fork this repository (if you want to use Git for version control or share it with the community) or download it then place the folder inside your `<Documents>/Chataigne/modules` folder.
+More info about CODA Audio SPACE HUB: https://codaaudio.com/electronics/space-hub/
+More info about Chataigne : https://benjamin.kuperberg.fr/chataigne
 
-You may want to check out the custom module documentation here : https://bkuperberg.gitbook.io/chataigne-docs/modules/custom-modules/making-your-own-module
+> [!CAUTION]
+> This module is NOT OFFICIALLY supported by CODA Audio.
+> There might be unsupported commands when mixing different version of this module and SPACE HUB Control.
+> The module is provided as is without any guarantees for completeness or compatibility.
+> Use at you own risk!
+
+> [!TIP]
+> This version was tested with SPACE HUB Control v0.7.0
+
+> [!TIP]
+> This Chataigne module sends OSC commands to the SPACE HUB Control software, not to the SPACE HUB Processor itself.
+> The SPACE HUB Control software filters, sorts and applies incoming control protocols (including OSC commands from this module) and routes 
