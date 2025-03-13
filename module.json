@@ -52,6 +52,51 @@
   },
 
   "commands": {
+    "Object Azimuth": {
+      "menu": "Object",
+      "callback": "objectAzimuth",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Azimuth": {
+          "type": "Float",
+          "min": -180.0,
+          "max": 180.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Object Elevation": {
+      "menu": "Object",
+      "callback": "objectElevation",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Elevation": {
+          "type": "Float",
+          "min": -90.0,
+          "max": 90.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Object Distance": {
+      "menu": "Object",
+      "callback": "objectDistance",
+      "parameters": {
+        "Object ID": {
+          "type": "Integer"
+        },
+        "Object Distance": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 100.0,
+          "default": 20.0
+        }
+      }
+    },
     "Object Name": {
       "menu": "Object",
       "callback": "objectName",
@@ -211,6 +256,169 @@
           "min": -80,
           "max": 10,
           "default": 0
+        }
+      }
+    },
+    "Group Azimuth": {
+      "menu": "Group",
+      "callback": "groupAzimuth",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group Azimuth": {
+          "type": "Float",
+          "min": -180.0,
+          "max": 180.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Group Elevation": {
+      "menu": "Group",
+      "callback": "groupElevation",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group Elevation": {
+          "type": "Float",
+          "min": -90.0,
+          "max": 90.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Group Distance": {
+      "menu": "Group",
+      "callback": "groupDistance",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group Distance": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 1.0,
+          "default": 0.2
+        }
+      }
+    },
+    "Group Spread": {
+      "menu": "Group",
+      "callback": "groupSpread",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group Spread": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 100.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Group LFE1 Send": {
+      "menu": "Group",
+      "callback": "groupLFE1Send",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group LFE1 Send": {
+          "type": "Float",
+          "min": -80.0,
+          "max": 10.0,
+          "default": -80.0
+        }
+      }
+    },
+    "Group LFE2 Send": {
+      "menu": "Group",
+      "callback": "groupLFE2Send",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group LFE2 Send": {
+          "type": "Float",
+          "min": -80.0,
+          "max": 10.0,
+          "default": -80.0
+        }
+      }
+    },
+    "Group Solo": {
+      "menu": "Group",
+      "callback": "groupSolo",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group Solo": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "Group Mute": {
+      "menu": "Group",
+      "callback": "groupMute",
+      "parameters": {
+        "Group ID": {
+          "type": "Integer"
+        },
+        "Group Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "VCA Level": {
+      "menu": "VCA",
+      "callback": "vcaLevel",
+      "parameters": {
+        "VCA ID": {
+          "type": "Integer",
+          "min": 1,
+          "max": 16
+        },
+        "VCA Level": {
+          "type": "Float",
+          "min": -80,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "VCA Mute": {
+      "menu": "VCA",
+      "callback": "vcaMute",
+      "parameters": {
+        "VCA ID": {
+          "type": "Integer",
+          "min": 1,
+          "max": 16
+        },
+        "VCA Mute": {
+          "type": "Boolean",
+          "default": false
+        }
+      }
+    },
+    "VCA Name": {
+      "menu": "VCA",
+      "callback": "vcaName",
+      "parameters": {
+        "VCA ID": {
+          "type": "Integer",
+          "min": 1,
+          "max": 16
+        },
+        "VCA Name": {
+          "type": "String",
+          "default": "VCA"
         }
       }
     },
@@ -463,6 +671,30 @@
         "Binaural Mute": {
           "type": "Boolean",
           "default": false
+        }
+      }
+    },
+    "Binaural Low Boost": {
+      "menu": "Downmix",
+      "callback": "downmixBinauralLowBoost",
+      "parameters": {
+        "Binaural Low Boost": {
+          "type": "Float",
+          "min": -12.0,
+          "max": 12.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Binaural HF Shelf": {
+      "menu": "Downmix",
+      "callback": "downmixBinauralHFShelf",
+      "parameters": {
+        "Binaural HF Shelf": {
+          "type": "Float",
+          "min": -12.0,
+          "max": 12.0,
+          "default": 0.0
         }
       }
     },

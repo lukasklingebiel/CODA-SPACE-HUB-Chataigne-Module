@@ -151,6 +151,33 @@ function createObjectContainer() {
   }
 }
 
+// Object Azimuth
+// /source/*/azim
+// Param: f
+// Range: -180 - 180°
+// Example: /source/1/azim 45°
+function objectAzimuth(index, val) {
+  local.send("/source/" + index + "/azim", val);
+}
+
+// Object Elevation
+// /source/*/elev
+// Param: f
+// Range: -90 - 90°
+// Example: /source/1/elev 30°
+function objectElevation(index, val) {
+  local.send("/source/" + index + "/elev", val);
+}
+
+// Object Distance
+// /source/*/dist
+// Param: f
+// Range: 0 - 100% scaled by Max Distance
+// Example: /source/1/dist 50%
+function objectDistance(index, val) {
+  local.send("/source/" + index + "/dist", val);
+}
+
 // Object Name
 // /source/*/name
 // Param: s
@@ -250,13 +277,101 @@ function objectOrbitRestart(index) {
  * Groups
  ###############################################*/
 
-// TODO
+// Group Azimuth
+// /group/*/azim
+// Param: f
+// Range: -180 - 180°
+// Example: /group/1/azim 45°
+function groupAzimuth(index, val) {
+  local.send("/group/" + index + "/azim", val);
+}
+
+// Group Elevation
+// /group/*/elev
+// Param: f
+// Range: -90 - 90°
+// Example: /group/1/elev 30°
+function groupElevation(index, val) {
+  local.send("/group/" + index + "/elev", val);
+}
+
+// Group Distance
+// /group/*/dist
+// Param: f
+// Range: 0 - 100% scaled by Max Distance
+// Example: /group/1/dist 50%
+function groupDistance(index, val) {
+  local.send("/group/" + index + "/dist", val);
+}
+
+// Group Spread
+// /group/*/spread
+// Param: f
+// Range: 0 - 100%
+// Example: /group/1/spread 50%
+function groupSpread(index, val) {
+  local.send("/group/" + index + "/spread", val);
+}
+
+// Group LFE1 Send
+// /group/*/lfe1
+// Param: f
+// Range: -80 - 10dB
+// Example: /group/1/lfe1 -6dB
+function groupLFE1Send(index, val) {
+  local.send("/group/" + index + "/lfe1", val);
+}
+
+// Group LFE2 Send
+// /group/*/lfe2
+// Param: f
+// Range: -80 - 10dB
+// Example: /group/1/lfe2 -6dB
+function groupLFE2Send(index, val) {
+  local.send("/group/" + index + "/lfe2", val);
+}
+
+// Group Solo
+// /group/*/solo
+// Example: /group/1/solo 1
+function groupSolo(index, val) {
+  local.send("/group/" + index + "/solo", val);
+}
+
+// Group Mute
+// /group/*/mute
+// Example: /group/1/mute 1
+function groupMute(index, val) {
+  local.send("/group/" + index + "/mute", val);
+}
 
 /*###############################################
  * VCA
  ###############################################*/
 
-// TODO
+// VCA Level dB
+// /vca/*/leveldB
+// Param: f
+// Range: -80 - 10dB
+// Example: /vca/1/leveldB -6dB
+function vcaLevel(index, val) {
+  local.send("/vca/" + index + "/leveldB", val);
+}
+
+// VCA Mute
+// /vca/*/mute
+// Example: /vca/1/mute 1
+function vcaMute(index, val) {
+  local.send("/vca/" + index + "/mute", val);
+}
+
+// VCA Name
+// /vca/*/name
+// Param: s
+// Example: /vca/1/name "Name"
+function vcaName(index, name) {
+  local.send("/vca/" + index + "/name", name);
+}
 
 /*###############################################
  * Snapshot
@@ -478,6 +593,24 @@ function downmixBinauralLevel(val) {
 // Example: /downmix/binaural/mute 1
 function downmixBinauralMute(val) {
   local.send("/downmix/binaural/mute", val);
+}
+
+// Binaural LowBoost
+// /downmix/binaural/lowboost
+// Param: f
+// Range: -12 - 12dB
+// Example: /downmix/binaural/lowboost 0dB
+function downmixBinauralLowBoost(val) {
+  local.send("/downmix/binaural/lowboost", val);
+}
+
+// Binaural HFShelf
+// /downmix/binaural/hfshelf
+// Param: f
+// Range: -12 - 12dB
+// Example: /downmix/binaural/hfshelf 0dB
+function downmixBinauralHFShelf(val) {
+  local.send("/downmix/binaural/hfshelf", val);
 }
 
 /*###############################################
