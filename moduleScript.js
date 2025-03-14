@@ -55,6 +55,11 @@ function moduleValueChanged(value) {
   }
 }
 
+function oscEvent(address,args)
+{
+  script.log("OSC Event: " + address + " " + args);
+}
+
 function createObjectContainer() {
   ObjectsContainer = local.values.addContainer("Objects Container");
 
@@ -407,6 +412,20 @@ function loadSnapshot(index) {
   local.send("/snapshot/" + index + "/load");
 }
 
+// New Snapshot
+// /snapshot/new
+// Param: s
+// Name
+// Example: /snapshot/new "Name"
+// optional argument = Snapshot Name
+function newSnapshot(name) {
+  if (name == null) {
+    local.send("/snapshot/new");
+  } else {
+    local.send("/snapshot/new", name);
+  }
+}
+
 /*###############################################
  * Reverb
  ###############################################*/
@@ -430,6 +449,27 @@ function nextReverbPreset() {
 // Example: /reverb/1/load
 function loadReverbPreset(index) {
   local.send("/reverb/" + index + "/load");
+}
+
+// New Reverb Preset
+// /reverb/new
+// Param: s
+// Name
+// Example: /reverb/new "Name"
+// optional argument = Reverb Name
+function newReverbPreset(name) {
+  if (name == null) {
+    local.send("/reverb/new");
+  } else {
+    local.send("/reverb/new", name);
+  }
+}
+
+// Save Reverb Preset
+// /reverb/*/save
+// Example: /reverb/1/save
+function saveReverbPreset(index) {
+  local.send("/reverb/" + index + "/save");
 }
 
 // Reverb Level dB

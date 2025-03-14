@@ -3,7 +3,7 @@
   "type": "OSC",
   "path": "Immersive solution",
 
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CODA Audio SPACE HUB Control",
   "url": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module",
   "downloadURL": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module/archive/master.zip",
@@ -46,7 +46,7 @@
   "scripts": ["moduleScript.js"],
 
   "values": {
-    "Objects Container": {
+    "Objects": {
       "type": "Container"
     }
   },
@@ -441,6 +441,12 @@
         }
       }
     },
+    "New Snapshot": {
+      "menu": "Snapshot",
+      "callback": "newSnapshot",
+      "parameters": {
+      }
+    },
     "Previous Reverb Preset": {
       "menu": "Reverb",
       "callback": "previousReverbPreset",
@@ -454,6 +460,25 @@
     "Load Reverb Preset": {
       "menu": "Reverb",
       "callback": "loadReverbPreset",
+      "parameters": {
+        "Reverb Preset": {
+          "type": "Integer"
+        }
+      }
+    },
+    "New Reverb Preset": {
+      "menu": "Reverb",
+      "callback": "newReverbPreset",
+      "parameters": {
+        "Reverb Preset Name": {
+          "type": "String",
+          "default": ""
+        }
+      }
+    },
+    "Save Reverb Preset": {
+      "menu": "Reverb",
+      "callback": "saveReverbPreset",
       "parameters": {
         "Reverb Preset": {
           "type": "Integer"
