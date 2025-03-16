@@ -2,6 +2,7 @@
 This is a Chataigne module to control CODA Audio SPACE HUB Control using the OSC protocol.
 
 More info about CODA Audio SPACE HUB: https://codaaudio.com/electronics/space-hub/
+
 More info about Chataigne : https://benjamin.kuperberg.fr/chataigne
 
 > [!CAUTION]
