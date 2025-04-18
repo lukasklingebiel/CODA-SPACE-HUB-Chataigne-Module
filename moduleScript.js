@@ -581,7 +581,7 @@ function reverbDecayRatioHigh(val) {
 // Param: f
 // Range: 10 - 70ms
 // Example: /reverb/predelay 30ms
-function reverbPreDelay(val) {
+function reverbPredelay(val) {
   local.send("/reverb/predelay", val);
 }
 
@@ -633,8 +633,8 @@ function reverbModulation(val) {
 // Reverb Early HPF
 // /reverb/earlyhpf
 // Param: f
-// Range: 20 - 20000Hz
-// Example: /reverb/earlyhpf 1000Hz
+// Range: 20.0 - 1000.0Hz
+// Example: /reverb/earlyhpf 1000.0Hz
 function reverbEarlyHPF(val) {
   local.send("/reverb/earlyhpf", val);
 }
@@ -642,8 +642,8 @@ function reverbEarlyHPF(val) {
 // Reverb Early LPF
 // /reverb/earlylpf
 // Param: f
-// Range: 20 - 20000Hz
-// Example: /reverb/earlylpf 10000Hz
+// Range: 1000.0 - 20000.0Hz
+// Example: /reverb/earlylpf 10000.0Hz
 function reverbEarlyLPF(val) {
   local.send("/reverb/earlylpf", val);
 }
@@ -651,8 +651,8 @@ function reverbEarlyLPF(val) {
 // Reverb Late HPF
 // /reverb/latehpf
 // Param: f
-// Range: 20 - 20000Hz
-// Example: /reverb/latehpf 1000Hz
+// Range: 20.0 - 1000.0Hz
+// Example: /reverb/latehpf 1000.0Hz
 function reverbLateHPF(val) {
   local.send("/reverb/latehpf", val);
 }
@@ -660,8 +660,8 @@ function reverbLateHPF(val) {
 // Reverb Late LPF
 // /reverb/latelpf
 // Param: f
-// Range: 20 - 20000Hz
-// Example: /reverb/latelpf 10000Hz
+// Range: 1000.0 - 20000.0Hz
+// Example: /reverb/latelpf 10000.0Hz
 function reverbLateLPF(val) {
   local.send("/reverb/latelpf", val);
 }

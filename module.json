@@ -3,7 +3,7 @@
   "type": "OSC",
   "path": "Immersive solution",
 
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CODA Audio SPACE HUB Control",
   "url": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module",
   "downloadURL": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module/archive/master.zip",
@@ -703,7 +703,7 @@
         "Reverb Early HPF": {
           "type": "Float",
           "min": 20.0,
-          "max": 20000.0,
+          "max": 1000.0,
           "default": 20.0
         }
       }
@@ -714,7 +714,7 @@
       "parameters": {
         "Reverb Early LPF": {
           "type": "Float",
-          "min": 20.0,
+          "min": 1000.0,
           "max": 20000.0,
           "default": 20000.0
         }
@@ -727,7 +727,7 @@
         "Reverb Late HPF": {
           "type": "Float",
           "min": 20.0,
-          "max": 20000.0,
+          "max": 1000.0,
           "default": 20.0
         }
       }
@@ -738,7 +738,7 @@
       "parameters": {
         "Reverb Late LPF": {
           "type": "Float",
-          "min": 20.0,
+          "min": 1000.0,
           "max": 20000.0,
           "default": 20000.0
         }
