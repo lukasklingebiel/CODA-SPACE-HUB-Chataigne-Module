@@ -426,6 +426,13 @@ function newSnapshot(name) {
   }
 }
 
+// Save Snapshot
+// /snapshot/*/save
+// Example: /snapshot/1/save
+function saveSnapshot(index) {
+  local.send("/snapshot/" + index + "/save");
+}
+
 /*###############################################
  * Reverb
  ###############################################*/
@@ -524,7 +531,140 @@ function reverbLateLevel(val) {
   local.send("/reverb/lateleveldB", val);
 }
 
-// TODO: Reverb Parameters
+// Reverb Decay
+// /reverb/decay
+// Param: f
+// Range: 0 - 5s
+// Example: /reverb/decay 1.5s
+function reverbDecay(val) {
+  local.send("/reverb/decay", val);
+}
+
+// Reverb Decay Ratio Low
+// /reverb/ratiolow
+// Param: f
+// Range: 0.2 - 5.0
+// Example: /reverb/ratiolow 1.0
+function reverbDecayRatioLow(val) {
+  local.send("/reverb/ratiolow", val);
+}
+
+// Reverb Decay Ratio Low Mid
+// /reverb/ratiolowmid
+// Param: f
+// Range: 0.2 - 5.0
+// Example: /reverb/ratiolowmid 1.0
+function reverbDecayRatioLowMid(val) {
+  local.send("/reverb/ratiolowmid", val);
+}
+
+// Reverb Decay Ratio High Mid
+// /reverb/ratiohighmid
+// Param: f
+// Range: 0.2 - 5.0
+// Example: /reverb/ratiohighmid 1.0
+function reverbDecayRatioHighMid(val) {
+  local.send("/reverb/ratiohighmid", val);
+}
+
+// Reverb Decay Ratio High
+// /reverb/ratiohigh
+// Param: f
+// Range: 0.2 - 5.0
+// Example: /reverb/ratiohigh 1.0
+function reverbDecayRatioHigh(val) {
+  local.send("/reverb/ratiohigh", val);
+}
+
+// Reverb Pre Delay
+// /reverb/predelay
+// Param: f
+// Range: 10 - 70ms
+// Example: /reverb/predelay 30ms
+function reverbPreDelay(val) {
+  local.send("/reverb/predelay", val);
+}
+
+// Reverb Balance front-back
+// /reverb/balancefrontback
+// Param: f
+// Range: -1.0 - 1.0
+// Example: /reverb/balancefrontback 0.0
+function reverbBalanceFrontBack(val) {
+  local.send("/reverb/balancefrontback", val);
+}
+
+// Reverb Balance up-down
+// /reverb/balanceupdown
+// Param: f
+// Range: -1.0 - 1.0
+// Example: /reverb/balanceupdown 0.0
+function reverbBalanceUpDown(val) {
+  local.send("/reverb/balanceupdown", val);
+}
+
+// Reverb Diffusion
+// /reverb/diffusion
+// Param: f
+// Range: 0.0 - 100.0
+// Example: /reverb/diffusion 50.0
+function reverbDiffusion(val) {
+  local.send("/reverb/diffusion", val);
+}
+
+// Reverb Size
+// /reverb/size
+// Param: f
+// Range: 0.0 - 100.0
+// Example: /reverb/size 50.0
+function reverbSize(val) {
+  local.send("/reverb/size", val);
+}
+
+// Reverb Modulation
+// /reverb/modulation
+// Param: f
+// Range: 0.0 - 100.0
+// Example: /reverb/modulation 50.0
+function reverbModulation(val) {
+  local.send("/reverb/modulation", val);
+}
+
+// Reverb Early HPF
+// /reverb/earlyhpf
+// Param: f
+// Range: 20 - 20000Hz
+// Example: /reverb/earlyhpf 1000Hz
+function reverbEarlyHPF(val) {
+  local.send("/reverb/earlyhpf", val);
+}
+
+// Reverb Early LPF
+// /reverb/earlylpf
+// Param: f
+// Range: 20 - 20000Hz
+// Example: /reverb/earlylpf 10000Hz
+function reverbEarlyLPF(val) {
+  local.send("/reverb/earlylpf", val);
+}
+
+// Reverb Late HPF
+// /reverb/latehpf
+// Param: f
+// Range: 20 - 20000Hz
+// Example: /reverb/latehpf 1000Hz
+function reverbLateHPF(val) {
+  local.send("/reverb/latehpf", val);
+}
+
+// Reverb Late LPF
+// /reverb/latelpf
+// Param: f
+// Range: 20 - 20000Hz
+// Example: /reverb/latelpf 10000Hz
+function reverbLateLPF(val) {
+  local.send("/reverb/latelpf", val);
+}
 
 /*###############################################
  * Downmix
@@ -694,4 +834,11 @@ function bpm(val) {
 // Example: /global/restart
 function restartOrbits() {
   local.send("/global/restart");
+}
+
+// Ping
+// /ping
+// Example: /ping
+function ping() {
+  local.send("/ping");
 }

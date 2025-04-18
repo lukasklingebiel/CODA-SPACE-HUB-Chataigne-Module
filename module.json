@@ -3,7 +3,7 @@
   "type": "OSC",
   "path": "Immersive solution",
 
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CODA Audio SPACE HUB Control",
   "url": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module",
   "downloadURL": "https://github.com/lukasklingebiel/CODA-SPACE-HUB-Chataigne-Module/archive/master.zip",
@@ -447,6 +447,15 @@
       "parameters": {
       }
     },
+    "Save Snapshot": {
+      "menu": "Snapshot",
+      "callback": "saveSnapshot",
+      "parameters": {
+        "Snapshot": {
+          "type": "Integer"
+        }
+      }
+    },
     "Previous Reverb Preset": {
       "menu": "Reverb",
       "callback": "previousReverbPreset",
@@ -552,6 +561,186 @@
           "min": -80,
           "max": 10,
           "default": 0
+        }
+      }
+    },
+    "Reverb Decay": {
+      "menu": "Reverb",
+      "callback": "reverbDecay",
+      "parameters": {
+        "Reverb Decay": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 5.0,
+          "default": 2.0
+        }
+      }
+    },
+    "Reverb Decay Ratio Low": {
+      "menu": "Reverb",
+      "callback": "reverbDecayRatioLow",
+      "parameters": {
+        "Reverb Decay Ratio Low": {
+          "type": "Float",
+          "min": 0.2,
+          "max": 5.0,
+          "default": 1.0
+        }
+      }
+    },
+    "Reverb Decay Ratio Low Mid": {
+      "menu": "Reverb",
+      "callback": "reverbDecayRatioLowMid",
+      "parameters": {
+        "Reverb Decay Ratio Low Mid": {
+          "type": "Float",
+          "min": 0.2,
+          "max": 5.0,
+          "default": 1.0
+        }
+      }
+    },
+    "Reverb Decay Ratio High Mid": {
+      "menu": "Reverb",
+      "callback": "reverbDecayRatioHighMid",
+      "parameters": {
+        "Reverb Decay Ratio High Mid": {
+          "type": "Float",
+          "min": 0.2,
+          "max": 5.0,
+          "default": 1.0
+        }
+      }
+    },
+    "Reverb Decay Ratio High": {
+      "menu": "Reverb",
+      "callback": "reverbDecayRatioHigh",
+      "parameters": {
+        "Reverb Decay Ratio High": {
+          "type": "Float",
+          "min": 0.2,
+          "max": 5.0,
+          "default": 1.0
+        }
+      }
+    },
+    "Reverb Predelay": {
+      "menu": "Reverb",
+      "callback": "reverbPredelay",
+      "parameters": {
+        "Reverb Pre Delay": {
+          "type": "Float",
+          "min": 10.0,
+          "max": 70.0,
+          "default": 15.0
+        }
+      }
+    },
+    "Reverb Balance front-back": {
+      "menu": "Reverb",
+      "callback": "reverbBalanceFrontBack",
+      "parameters": {
+        "Reverb Balance front-back": {
+          "type": "Float",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Reverb Balance up-down": {
+      "menu": "Reverb",
+      "callback": "reverbBalanceUpDown",
+      "parameters": {
+        "Reverb Balance up-down": {
+          "type": "Float",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0
+        }
+      }
+    },
+    "Reverb Diffusion": {
+      "menu": "Reverb",
+      "callback": "reverbDiffusion",
+      "parameters": {
+        "Reverb Diffusion": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 100.0,
+          "default": 50.0
+        }
+      }
+    },
+    "Reverb Size": {
+      "menu": "Reverb",
+      "callback": "reverbSize",
+      "parameters": {
+        "Reverb Size": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 100.0,
+          "default": 50.0
+        }
+      }
+    },
+    "Reverb Modulation": {
+      "menu": "Reverb",
+      "callback": "reverbModulation",
+      "parameters": {
+        "Reverb Modulation": {
+          "type": "Float",
+          "min": 0.0,
+          "max": 100.0,
+          "default": 50.0
+        }
+      }
+    },
+    "Reverb Early HPF": {
+      "menu": "Reverb",
+      "callback": "reverbEarlyHPF",
+      "parameters": {
+        "Reverb Early HPF": {
+          "type": "Float",
+          "min": 20.0,
+          "max": 20000.0,
+          "default": 20.0
+        }
+      }
+    },
+    "Reverb Early LPF": {
+      "menu": "Reverb",
+      "callback": "reverbEarlyLPF",
+      "parameters": {
+        "Reverb Early LPF": {
+          "type": "Float",
+          "min": 20.0,
+          "max": 20000.0,
+          "default": 20000.0
+        }
+      }
+    },
+    "Reverb Late HPF": {
+      "menu": "Reverb",
+      "callback": "reverbLateHPF",
+      "parameters": {
+        "Reverb Late HPF": {
+          "type": "Float",
+          "min": 20.0,
+          "max": 20000.0,
+          "default": 20.0
+        }
+      }
+    },
+    "Reverb Late LPF": {
+      "menu": "Reverb",
+      "callback": "reverbLateLPF",
+      "parameters": {
+        "Reverb Late LPF": {
+          "type": "Float",
+          "min": 20.0,
+          "max": 20000.0,
+          "default": 20000.0
         }
       }
     },
@@ -770,6 +959,11 @@
     "Restart Orbits": {
       "menu": "Global",
       "callback": "restartOrbits",
+      "parameters": {}
+    },
+    "Ping": {
+      "menu": "Global",
+      "callback": "ping",
       "parameters": {}
     }
   }
